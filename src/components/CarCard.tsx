@@ -1,4 +1,6 @@
-const CarCard = ({ data }) => {
+import type { ICarsDb } from "../db/carsDb";
+
+const CarCard = ({ data }: { data: ICarsDb }) => {
   return (
     <div className="carCard">
       <div className="cardImg">
