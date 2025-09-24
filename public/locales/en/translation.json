@@ -9,7 +9,7 @@
         "cart": "Cart"
     },
     "footer": {
-        "copyright": "All rights reserved Tarlan Alijanov ©",
+        "copyright": "All rights reserved <span>Sirius Gurban</span> © {{year}}",
         "follow": "Follow us"
     }
 }

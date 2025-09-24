@@ -5,9 +5,9 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import i18n, { changeLanguage } from "i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(
@@ -20,14 +20,38 @@ const Footer = () => {
     setSelectedLanguage(lng);
   };
 
+  const [isLight, setIsLight] = useState(false);
+
+  // Load theme from localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      setIsLight(true);
+      document.body.classList.add("lightMode");
+    }
+  }, []);
+
+  // Update theme & save to localStorage
+  useEffect(() => {
+    if (isLight) {
+      document.body.classList.add("lightMode");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.remove("lightMode");
+      localStorage.setItem("theme", "dark");
+    }
+  }, [isLight]);
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="row">
           <p className="copyright">
-            {t("footer.copyright")}
-            {/* All rights reserved <span>Tarlan Alijanov</span> ©{" "} */}
-            {new Date().getFullYear()}
+            <Trans
+              i18nKey="footer.copyright"
+              values={{ year: new Date().getFullYear() }}
+              components={{ span: <span /> }}
+            />
           </p>
           <ul className="socialList">
             <li className="socialItem">{t("footer.follow")}</li>
@@ -61,7 +85,11 @@ const Footer = () => {
               <option value="de">Deutsch</option>
             </select>
             <label className="switch">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                checked={isLight}
+                onChange={() => setIsLight(!isLight)}
+              />
               <span className="slider"></span>
             </label>
           </div>

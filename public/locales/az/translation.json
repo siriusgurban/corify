@@ -9,7 +9,7 @@
         "cart": "Səbət"
     },
     "footer": {
-        "copyright": "Bütün hüquqlar qorunur Sirius Gurban ©",
+        "copyright": "Bütün hüquqlar qorunur <span>Sirius Gurban</span> © {{year}}",
         "follow": "Bizi izləyin"
     }
 }
