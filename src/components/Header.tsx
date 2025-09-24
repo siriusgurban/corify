@@ -18,8 +18,10 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { removeFromCart } from "../redux/slices/produtcSlice";
 import CustomModal from "./CustomModal";
 import type { IProduct } from "../Modules/Shop/Models/ShopModels";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.productSlice.cart);
   const cartCount = useAppSelector((state) => state.productSlice.cartCount);
@@ -54,12 +56,12 @@ const Header = () => {
               <FaShoppingCart />
             </div>
             <button className="logOut">
-              LOGOUT
+              {t("header.logout")}
               <FaSignOutAlt />
             </button>
             <Link className="login" to="/login">
               <FaUserCircle />
-              <span>LOGIN</span>
+              <span>{t("header.login")}</span>
             </Link>
           </div>
         </div>

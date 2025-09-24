@@ -5,8 +5,13 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const handleChangeLng = (lng: string) => {
+    
+  };
   return (
     <footer className="footer">
       <div className="container">
@@ -34,7 +39,7 @@ const Footer = () => {
             </li>
           </ul>
           <div className="inps">
-            <select name="language" className="language">
+            <select name="language" className="language" onChange={(e)=>handleChangeLng(e.target.value)}>
               <option value="en">English</option>
               <option value="az">Azərbaycanca</option>
               <option value="tr">Türkçe</option>
