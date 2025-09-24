@@ -1,0 +1,15 @@
+{
+    "header": {
+        "login": "Giriş",
+        "logout": "Çıxış"
+    },
+    "pageList": {
+        "home": "Ana səhifə",
+        "shop": "Mağaza",
+        "cart": "Səbət"
+    },
+    "footer": {
+        "copyright": "Bütün hüquqlar qorunur Sirius Gurban ©",
+        "follow": "Bizi izləyin"
+    }
+}

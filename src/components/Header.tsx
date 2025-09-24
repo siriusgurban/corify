@@ -45,7 +45,7 @@ const Header = () => {
                 .filter((item) => item.isOpened)
                 .map((page) => (
                   <li className="navItem" key={page.id}>
-                    <NavLink to={page.path}>{page.name}</NavLink>
+                    <NavLink to={page.path}>{t(`pageList.${page.id}`)}</NavLink>
                   </li>
                 ))}
             </ul>

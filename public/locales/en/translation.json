@@ -1,8 +1,15 @@
 {
     "header": {
-        "home":"Home",
-        "shop": "Shop",
-        "login":"Login",
+        "login": "Login",
         "logout": "Logout"
+    },
+    "pageList": {
+        "home": "Home",
+        "shop": "Shop",
+        "cart": "Cart"
+    },
+    "footer": {
+        "copyright": "All rights reserved Tarlan Alijanov ©",
+        "follow": "Follow us"
     }
 }
